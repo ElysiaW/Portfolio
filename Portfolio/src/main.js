@@ -37,7 +37,7 @@ const textCoordinates = ctx.getImageData(0, 0, 500, 500);
 
 //creating the particle class
 class particle {
-    constructor(x,y){
+    constructor(x,y,size){
         this.x = x;
         this.y = y;
         this.size = 2.3;
@@ -108,3 +108,15 @@ class particle {
 
 animate();
 
+
+const buttonElements = document.querySelectorAll('button');
+let buttonMeasurements = [];
+function measureButtons(){
+    buttonMeasurements = [];
+    buttonElements.forEach(button => {
+        buttonMeasurements.push(button.getBoundingClientRect());
+    })};
+    measureButtons();
+
+let activeButton = 0;
+buttonElements.forEach(button => button.addEventListener('mouseenter', function())
