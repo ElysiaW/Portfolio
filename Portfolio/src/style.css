@@ -36,8 +36,9 @@ section{
 }
 
 footer {
-    height: var(--section-height);
-    background-color: var(--section-colour-footer);
+    background-color: var(--section-colour);
+    color: white
+    padding: 80px;
 }
 
 nav {
@@ -123,6 +124,7 @@ a {
 
 .social {
     margin: 20px;
+    fill: white
 }
 
 .sub-section {
@@ -166,14 +168,20 @@ h2 {
     width: 300px;
     height: 600px;
     background-color: #290752;
-    /*box-shadow: 5px 5px 20px #b0ffff;*/
     -webkit-box-shadow: 5px 5px 3px 3px #FF7B7B, 10px 10px 3px 3px #FFC478, 15px 15px 3px 3px #FFFA78, 20px 20px 3px 3px #BAFF73, 20px 20px 3px 3px #BAFF73; 
 box-shadow: 5px 5px 3px 3px #FF7B7B, 10px 10px 3px 3px #FFC478, 15px 15px 3px 3px #FFFA78, 20px 20px 3px 3px #BAFF73, 20px 20px 3px 3px #BAFF73;
 }
 
 .project-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 1000px) {
+    .project-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
 
 .subtext {
