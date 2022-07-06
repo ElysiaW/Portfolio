@@ -45,14 +45,14 @@ class particle {
         this.baseY = this.y;
         this.density = (Math.random() * 50) + 5;
     }
-    draw(){
+    draw() {
         ctx.fillStyle = 'gradient' ;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.closePath();
         ctx.fill();
     }
-    update(){
+    update() {
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
@@ -95,7 +95,7 @@ class particle {
     }
 
     init();
-    
+
 //animating the particles
     function animate() {
         ctx.clearRect(0,0, canvas.width, canvas.height);
