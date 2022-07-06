@@ -1,9 +1,10 @@
 :root {
-    --section-height: 500px;
+    --section-height: 100%;
     --section-colour: #000000;
     --section-colour-hero: #000000;
     --section-colour-footer: #ddff87;
     --hero-text-colour: #fff;
+    --rainbow: -webkit-linear-gradient(left, #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #7f00ff, #ff00ff);
 
 }
 
@@ -25,7 +26,6 @@ canvas {
 section{
     height: var(--section-height);
     background-color: var(--section-colour);
-    border: solid black 1px;
 }
 
 .hero {
@@ -54,12 +54,12 @@ ul {
 
 li {
     list-style-type: none;
+    align-items: center;
 }
 
 
 p {
     margin: 0;
-    position: absolute;
     font-size: 30px;
     font-weight: 400;
 }
@@ -73,7 +73,7 @@ p {
 }
 .hero-text {
     margin-left: 80px;
-    margin-bottom: 100px
+    margin-top: 500px;
 }
 
 .socials {
@@ -83,7 +83,8 @@ p {
 .button {
     width: 200px;
     height: 50px;
-    margin-top: 400px;
+    margin-top: 100px;
+    margin-bottom: 300px;
     background-color: #29216f;
     border-radius: 40px;
     text-align: center;
@@ -111,11 +112,19 @@ p {
     height: 100%;
 }
 
+.sub-section-projects {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 30px;
+}
+
 h2 {
     font-size: 50px;
     font-weight: 600;
     color: white;
-    padding-left: 80px;
+    margin-left: 30px;
+    padding: 30px;
 }
 
 .information {
@@ -132,4 +141,40 @@ h2 {
     justify-content: space-around;
     width : 500px;
     border-radius: 500px;
+}
+
+.project-card {
+    width: 300px;
+    height: 600px;
+    background-color: #290752;
+    /*box-shadow: 5px 5px 20px #b0ffff;*/
+    -webkit-box-shadow: 5px 5px 3px 3px #FF7B7B, 10px 10px 3px 3px #FFC478, 15px 15px 3px 3px #FFFA78, 20px 20px 3px 3px #BAFF73, 20px 20px 3px 3px #BAFF73; 
+box-shadow: 5px 5px 3px 3px #FF7B7B, 10px 10px 3px 3px #FFC478, 15px 15px 3px 3px #FFFA78, 20px 20px 3px 3px #BAFF73, 20px 20px 3px 3px #BAFF73;
+}
+
+.project-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.subtext {
+    font-size: 15px;
+    font-weight: 400;
+    color: white
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+    margin-left: 20px;
+    padding: 20px;
+}
+.project-image {
+    width: 300px;
+}
+
+hr {
+    margin-left: 20px;
+    margin-right: 20px;
 }
