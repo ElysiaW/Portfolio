@@ -105,7 +105,7 @@ p {
 
 .button-container {
     display: flex;
-    width: 1100px;
+    width: 100vh;
     justify-content: space-between;
 }
 
@@ -125,6 +125,31 @@ a {
 .social {
     margin: 20px;
     fill: white
+}
+
+.svg1, .svg2 {
+    width: 65px;
+    height: 65px;
+}
+
+.svg1:hover {
+    background-color: #009207;
+    border-radius: 30px;
+}
+
+.svg1:active {
+    background-color: white;
+    border-radius: 30px;
+}
+
+.svg2:hover {
+    background-color: #009207;
+    border-radius: 10px;
+}
+
+.svg2:active {
+    background-color: white;
+    border-radius: 10px;
 }
 
 .sub-section {
@@ -204,4 +229,18 @@ h3 {
 hr {
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.this-project {
+    padding:50px;
+    justify-content: left;
+    text-align: center;
+    border-width: 5px;
+}
+
+.portfolio-text {
+    border-width: 5px;
+    border-radius: 500px;
+    border-color: #ee00ff;
+    border-style: dotted;
 }
