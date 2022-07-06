@@ -5,6 +5,7 @@ const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 let particleArray = [];
+ctx.lineWidth = 3;
 
 //handle mouse
 const mouse = {
@@ -28,7 +29,7 @@ gradient.addColorStop('0.75', 'blue');
 gradient.addColorStop('0.875', 'violet');
 
 //drawing the text
-ctx.fillStyle = gradient;
+ctx.fillStyle = 'rgba(255,255,255,0.8';
 ctx.font = '35px Trebuchet MS';
 //text and position on canvas
 ctx.fillText('Elysia Williams', 13, 70);
@@ -43,19 +44,45 @@ class particle {
         this.size =1.8;
         this.baseX = this.x;
         this.baseY = this.y;
-        this.density = (Math.random() * 50) + 5;
+        //Random num between 1 and 9
+        this.density = (Math.random() * 2) + 1;
+        this.distance;
     }
-    draw() {
-        ctx.fillStyle = 'gradient' ;
+    draw(){
+        ctx.fillStyle = 'white' ;
+        ctx.strokeStyle = gradient;
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+
+        if (this.distance < mouse.radius-5){
+            this.size = 7;
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.closePath();
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        } 
+        else if (this.distance <= mouse.radius){
+            this.size = 3;
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.closePath();
+            ctx.beginPath();
+        } else {
+            this.size = 1;
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.closePath();
+            ctx.beginPath();
+        }
         ctx.closePath();
         ctx.fill();
     }
-    update() {
+    update(){
         let dx = mouse.x - this.x;
         let dy = mouse.y - this.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
+        this.distance = distance;
         let forceDirectionX = dx / distance;
         let forceDirectionY = dy / distance;
         let maxDistance = mouse.radius;
@@ -69,11 +96,11 @@ class particle {
         } else {
             if (this.x !== this.baseX){
                 let dx = this.x - this.baseX;
-                this.x -= dx * 0.1;
+                this.x -= dx * 0.2;
             }
             if (this.y !== this.baseY){
                 let dy = this.y - this.baseY;
-                this.y -= dy * 0.1;
+                this.y -= dy * 0.2;
             }
         }
     }
@@ -107,4 +134,5 @@ class particle {
     };
 
 animate();
+
 
