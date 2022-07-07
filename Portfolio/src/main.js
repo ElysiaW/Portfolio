@@ -37,7 +37,7 @@ const textCoordinates = ctx.getImageData(0, 0, 500, 500);
 
 //creating the particle class
 class particle {
-    constructor(x,y,size){
+    constructor(x,y){
         this.x = x;
         this.y = y;
         this.size = 2.3;
@@ -109,6 +109,31 @@ class particle {
 animate();
 
 
+let particleArray2 = [];
+
+
+class particle2 {
+    constructor(x,y,size){
+        this.x = x;
+        this.y = y;
+        this.size = size;
+        this.density = (Math.random() * 1.5) + 1.5;
+        this.directionX = Math.random() * 2;
+    }
+    update2(){
+        this.y -= this.density;
+        this.x += this.directionX;
+        if (this.size >= 0.3) this.size -= 0.2;
+    }
+    draw2(){
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = 'orange';
+        ctx.fill();
+    }
+}
+
+
 const buttonElements = document.querySelectorAll('button');
 let buttonMeasurements = [];
 function measureButtons(){
@@ -119,4 +144,37 @@ function measureButtons(){
     measureButtons();
 
 let activeButton = 0;
-buttonElements.forEach(button => button.addEventListener('mouseenter', function())
+buttonElements.forEach(button => button.addEventListener('mouseenter', function(){
+    activeButton = button.dataset.number;
+}));
+buttonElements.forEach(button => button.addEventListener('mouseleave', function(){
+    activeButton = -1;
+}));
+
+function handleParticles(){
+    for (let i=0; i < particleArray2.length; i++){
+        particleArray2[i].update2();
+        particleArray2[i].draw2();
+        if (particleArray2[i].size <=1){
+            particleArray2.splice(i, 1);
+            i--;
+        }
+    }
+}
+
+function createParticle(){
+    if (activeButton > -1){
+        let size = Math.random() *40 +10;
+        let x= Math.random() * buttonMeasurements[activeButton];
+        let y = Math.random() * buttonMeasurements[activeButton];
+        particleArray2.push(new particle(x, y, size));
+    }
+}
+function animate2(){
+
+    ctx.clearRect(0,0, canvas.width, canvas.height);
+    createParticle();
+    handleParticles();
+    requestAnimationFrame(animate2);
+}
+animate2();
