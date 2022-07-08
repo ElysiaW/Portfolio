@@ -111,7 +111,7 @@ animate();
 
 let particleArray2 = [];
 
-
+/*
 class particle2 {
     constructor(x,y,size){
         this.x = x;
@@ -132,7 +132,6 @@ class particle2 {
         ctx.fill();
     }
 }
-
 
 const buttonElements = document.querySelectorAll('button');
 let buttonMeasurements = [];
@@ -178,3 +177,4 @@ function animate2(){
     requestAnimationFrame(animate2);
 }
 animate2();
+*/
