@@ -126,6 +126,11 @@ a {
     background-color: var(--button-hover-colour-active);
 }
 
+.button2 {
+    display: flex;
+    position: relative;
+}
+
 .social {
     margin: 20px;
     fill: var(--social-fill-colour);
