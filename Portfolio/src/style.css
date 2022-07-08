@@ -5,6 +5,20 @@
     --section-colour-footer: #ddff87;
     --hero-text-colour: #fff;
     --rainbow: -webkit-linear-gradient(left, #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #7f00ff, #ff00ff);
+    --tooltip-scale: 0;
+    --tooltip-arrow-size: 10px;
+    --tooltip-color: -webkit-linear-gradient(left, #fc8181, #ffc082, #ffff80, #7afa7a, #8affff);
+    --tooltip-text-colour: #1c012f;
+    --button-background: #29216f;
+    --button-hover-colour: #8b00b9;
+    --button-hover-colour-active: #393939;
+    --social-fill-colour: white;
+    --info-text-colour: white;
+    --h2-colour: white;
+    --h3-colour: white;
+    --svg-active: rgb(183, 255, 193);
+    --svg-hover: #009207;
+
 
 }
 
@@ -37,7 +51,6 @@ section{
 
 footer {
     background-color: var(--section-colour);
-    color: white
     padding: 80px;
 }
 
@@ -84,22 +97,13 @@ p {
     height: 50px;
     margin-top: 100px;
     margin-bottom: 300px;
-    background-color: #29216f;
+    background-color: var(--button-background);
     border-radius: 40px;
     text-align: center;
     font-size: 30px;
     font-weight: 400;
     color: var(--hero-text-colour);
     padding-top: 5px;
-    position: relative;
-}
-
-.button2 {
-    width: 200px;
-    height: 50px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 400;
     position: relative;
 }
 
@@ -115,16 +119,16 @@ a {
 }
 
 .button:hover {
-    background-color: #8b00b9;
+    background-color: var(--button-hover-colour);
 }
 
 .button:active {
-    background-color: #393939;
+    background-color: var(--button-hover-colour-active);
 }
 
 .social {
     margin: 20px;
-    fill: white
+    fill: var(--social-fill-colour);
 }
 
 .svg1, .svg2 {
@@ -133,22 +137,22 @@ a {
 }
 
 .svg1:hover {
-    background-color: #009207;
+    background-color: var(--svg-hover);
     border-radius: 30px;
 }
 
 .svg1:active {
-    background-color: rgb(183, 255, 193);;
+    background-color: var(--svg-active);
     border-radius: 30px;
 }
 
 .svg2:hover {
-    background-color: #009207;
+    background-color: var(--svg-hover);
     border-radius: 10px;
 }
 
 .svg2:active {
-    background-color: rgb(183, 255, 193);;
+    background-color: var(--svg-active);
     border-radius: 10px;
 }
 
@@ -168,7 +172,7 @@ a {
 h2 {
     font-size: 50px;
     font-weight: 600;
-    color: white;
+    color: var(--h2-colour);
     margin-left: 30px;
     padding: 30px;
 }
@@ -178,7 +182,7 @@ h2 {
     display: flex;
     flex-direction: column;
     text-align: left;
-    color: white;
+    color: var(--info-text-colour);
     padding-left: 80px;
 }
 
@@ -212,23 +216,26 @@ box-shadow: 5px 5px 3px 3px #FF7B7B, 10px 10px 3px 3px #FFC478, 15px 15px 3px 3p
 .subtext {
     font-size: 15px;
     font-weight: 400;
-    color: white;
+    color: var(--info-text-colour);
+    text-align: center;
 }
 
 h3 {
     font-size: 30px;
     font-weight: 600;
-    color: white;
-    margin-left: 20px;
+    color: var(--h3-colour);
     padding: 20px;
+    text-align: center;
 }
 .project-image {
+    padding: 10px;
     width: 300px;
 }
 
 hr {
     margin-left: 20px;
     margin-right: 20px;
+    margin-bottom: 10px;
 }
 
 .this-project {
@@ -243,4 +250,59 @@ hr {
     border-radius: 500px;
     border-color: #ee00ff;
     border-style: dotted;
+}
+
+.img-container {
+    display: flex;
+    height:300px;
+    width: 300px;
+}
+
+.project-title {
+    font-size:28px; 
+    color: var(--h3-colour);
+    position: relative;
+}
+
+.project-title::before,
+.project-title::after {
+
+  position: absolute;
+  top: -.25rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--tooltip-scale));
+  transition: 150ms transform;
+  transform-origin: bottom center;
+}
+
+.project-title::before {
+    
+  --translate-y: calc(-100% - var(--tooltip-arrow-size));
+
+  content: attr(data-tooltip);
+  color: var(--tooltip-text-colour);
+  padding: .5rem;
+  border-radius: .3rem;
+  text-align: center;
+  width: max-content;
+  max-width: 100%;
+  background: var(--tooltip-color);
+}
+
+.project-title:hover::before,
+.project-title:hover::after {
+  --tooltip-scale: 1;
+}
+
+.project-title::after {
+  --translate-y: calc(-1 * var(--tooltip-arrow-size));
+
+  content: '';
+  border: var(--tooltip-arrow-size) solid transparent;
+  border-top-color: var(--tooltip-color);
+  transform-origin: top center;
+}
+
+.project-title:active {
+    
 }
