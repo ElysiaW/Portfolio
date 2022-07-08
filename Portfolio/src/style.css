@@ -29,6 +29,7 @@
 }
 body {
     font-family: 'Kantumruy Pro', sans-serif;
+    background-color: var(--section-colour);
 }
 
 canvas {
@@ -215,6 +216,19 @@ box-shadow: 5px 5px 3px 3px #FF7B7B, 10px 10px 3px 3px #FFC478, 15px 15px 3px 3p
     .project-container {
         display: flex;
         flex-wrap: wrap;
+    }
+    .button-container {
+        display: none;
+    }
+    .hero-area {
+        display: inline-block;
+        width: 100vw;
+        height: 100vh;
+    }
+    .headshot {
+        display: flex;
+        width : 300px;
+
     }
 }
 
