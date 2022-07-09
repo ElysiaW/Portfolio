@@ -36,11 +36,21 @@ canvas {
     position: absolute;
     top: 0;
     left: 0;
+    width:100vw;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 60px;
+    color: transparent;
+    text-align: center;
 }
 
 section{
     height: var(--section-height);
     background-color: var(--section-colour);
+    width: 100vw;
+    height: 100vh;
 }
 
 .hero {
@@ -68,6 +78,7 @@ ul {
 
 li {
     list-style-type: none;
+    align-items: right;
 }
 
 
@@ -82,11 +93,11 @@ p {
     flex-direction: flex;
     height: 100%;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
 }
 .hero-text {
     margin-left: 80px;
-    margin-top: 500px;
+    margin-top: 300px;
 }
 
 .socials {
@@ -228,7 +239,23 @@ box-shadow: 5px 5px 3px 3px #FF7B7B, 10px 10px 3px 3px #FFC478, 15px 15px 3px 3p
     .headshot {
         display: flex;
         width : 300px;
-
+    }
+    h1 {
+        color: var(--h2-colour);
+        margin-top: 30px;
+    }
+    canvas {
+        display: none;
+    }
+    .hero-text {
+        margin-top: 100px;
+        text-align: center;
+        margin-left: 0;
+    }
+    #contact-me {
+        justify-content: center;
+        padding: 0;
+        align-items: baseline;
     }
 }
 
@@ -308,3 +335,4 @@ hr {
   border-top-color: var(--tooltip-color);
   transform-origin: top center;
 }
+
