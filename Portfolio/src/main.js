@@ -29,14 +29,9 @@ gradient.addColorStop('0.875', 'violet');
 
 //drawing the text
 ctx.fillStyle = gradient;
-if (canvas.width < 1000) {
-    ctx.font = '20px Trebuchet MS';
-    ctx.fillText('Elysia', 13, 70);
-}
-else {
     ctx.font = '35px Trebuchet MS';
     ctx.fillText('Elysia Williams', 13, 70);
-};
+
 //text and position on canvas
 
 //scans 500x500 pixels of the text to find pixels with opacity
