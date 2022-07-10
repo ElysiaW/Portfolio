@@ -49,8 +49,6 @@ h1 {
 section{
     height: var(--section-height);
     background-color: var(--section-colour);
-    width: 100vw;
-    height: 100vh;
 }
 
 .hero {
@@ -210,6 +208,22 @@ h2 {
     border-radius: 500px;
 }
 
+.headshot2 {
+    display: none;
+    justify-content: space-around;
+    width : 100vw;
+    height: 100vw;
+    border-radius: 500px;
+    padding: 10vw;
+}
+
+.hero-info2 {
+    font-size: 15px;
+    font-weight: 400;
+    color: yellow;
+    display: none;
+}
+
 .project-card {
     width: 300px;
     height: 600px;
@@ -221,42 +235,6 @@ box-shadow: 5px 5px 3px 3px #FF7B7B, 10px 10px 3px 3px #FFC478, 15px 15px 3px 3p
 .project-container {
     display: flex;
     justify-content: space-between;
-}
-
-@media only screen and (max-width: 1000px) {
-    .project-container {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .button-container {
-        display: none;
-    }
-    .hero-area {
-        display: inline-block;
-        width: 100vw;
-        height: 100vh;
-    }
-    .headshot {
-        display: flex;
-        width : 300px;
-    }
-    h1 {
-        color: var(--h2-colour);
-        margin-top: 30px;
-    }
-    canvas {
-        display: none;
-    }
-    .hero-text {
-        margin-top: 100px;
-        text-align: center;
-        margin-left: 0;
-    }
-    #contact-me {
-        justify-content: center;
-        padding: 0;
-        align-items: baseline;
-    }
 }
 
 .subtext {
@@ -273,6 +251,7 @@ h3 {
     padding: 20px;
     text-align: center;
 }
+
 .project-image {
     padding: 10px;
     width: 300px;
@@ -336,3 +315,63 @@ hr {
   transform-origin: top center;
 }
 
+
+
+
+
+@media only screen and (max-width: 1000px) {
+    .project-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .button-container {
+        display: none;
+    }
+    .hero-area {
+        display: inline-block;
+        width: 100vw;
+        height: 100vh;
+    }
+    .headshot {
+        display: none;
+    }
+    h1 {
+        color: var(--h2-colour);
+    }
+    h2 {
+        margin:0;
+    }
+    canvas {
+        display: none;
+    }
+    .hero-text {
+        margin-top: 100px;
+        text-align: center;
+        margin-left: 0;
+    }
+    #contact-me {
+        text-align: center;
+    }
+    .contact-card {
+        font-size: 20px;
+    }
+    .information {
+        text-align: center;
+        padding-left:0;
+        max-width: 100vw;
+    }
+    h2 {
+        text-align: center;
+    }
+    .headshot2 {
+        display: flex;
+        margin-bottom: 5px;
+    }
+    .hero-info2 {
+        display: flex;
+        margin-top: 10px;
+        text-align: center;
+        justify-content: center;
+    }
+    
+}
