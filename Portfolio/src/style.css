@@ -217,6 +217,11 @@ h2 {
     padding: 10vw;
 }
 
+.WCAT {
+    text-decoration: underline;
+    color: #e3ca27;
+}
+
 .hero-info2 {
     font-size: 15px;
     font-weight: 400;
