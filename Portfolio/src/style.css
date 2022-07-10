@@ -339,7 +339,7 @@ hr {
         color: var(--h2-colour);
     }
     h2 {
-        margin:0;
+        margin-top:0;
     }
     canvas {
         display: none;
@@ -372,6 +372,10 @@ hr {
         margin-top: 10px;
         text-align: center;
         justify-content: center;
+    }
+    .hero-area {
+        display: flex;
+        text-align: center;
     }
     
 }
