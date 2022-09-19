@@ -1,0 +1,17 @@
+.laptop-only {
+    display: flex;
+}
+.tablets-only {
+    display: none;
+}
+.unused {
+    display: none;
+}
+@media only screen and (max-width: 1000px) {
+    .laptop-only {
+        display: none;
+    }
+    .tablets-only {
+        display: flex;
+    }
+}

@@ -1,5 +1,5 @@
 :root {
-    --section-height: 100%;
+
     --section-colour: #000000;
     --section-colour-hero: #000000;
     --section-colour-footer: #ddff87;
@@ -52,13 +52,14 @@ section{
 .hero {
     background-color: var(--section-colour-hero);
     height: 100vh;
+    width: 100vw;
     color: var(--hero-text-colour);
     font-size: 40px;
 }
 
 footer {
     background-color: var(--section-colour);
-    padding: 80px;
+    padding: 0.028%;
 }
 
 nav {
@@ -68,7 +69,7 @@ nav {
 
 ul {
     display: flex;
-    width: 200px;
+    width: 0.066%;
     justify-content: space-between;
 }
 
@@ -88,12 +89,13 @@ p {
     display: flex;
     flex-direction: flex;
     height: 100%;
+    width: 100%;
     justify-content: space-between;
     align-items: left;
 }
 .hero-text {
-    margin-left: 80px;
-    margin-top: 300px;
+    margin-left: 2.64%;
+    margin-top: 25%;
 }
 
 .socials {
@@ -238,6 +240,7 @@ box-shadow: 5px 5px 3px 3px #FF7B7B, 10px 10px 3px 3px #FFC478, 15px 15px 3px 3p
 .project-container {
     display: flex;
     justify-content: space-between;
+    padding:20px;
 }
 
 .subtext {
@@ -318,6 +321,14 @@ hr {
   transform-origin: top center;
 }
 
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+}
 
 
 
@@ -382,3 +393,5 @@ hr {
     }
     
 }
+
+
